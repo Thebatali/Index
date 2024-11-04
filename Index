@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Areebah</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('https://example.com/old-map-background.jpg'); /* Replace with your treasure map background */
+            background-size: cover;
+            color: #4B3D3D; /* Dark text for contrast */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .slider {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slide {
+            width: 80%; /* Adjust width for better fit */
+            max-height: 80%; /* Limit height */
+            position: absolute;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            opacity: 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Allow scrolling if content overflows */
+            text-align: left;
+        }
+        .active {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #8B4513; /* SaddleBrown */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #D2691E; /* Chocolate */
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            margin: 15px 0;
+            color: #4B3D3D; /* Dark text for readability */
+        }
+        .nav {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        button {
+            background-color: #8B4513; /* SaddleBrown */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 0 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff6347; /* Tomato */
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider">
+    <div class="slide active">
+        <h1>Dear Areebah,</h1>
+        <p>In the treasure chest of time, your birthday shines bright,</p>
+        <p>A gem in the ocean, a star in the night.</p>
+        <p>Each moment, a wave, with love it does swell,</p>
+        <p>Bringing joy and laughter, a magical spell.</p>
+    </div>
+    <div class="slide">
+        <h2>Celebrating Your Beauty</h2>
+        <p>Your spirit, a beacon, like the sun's warm embrace,</p>
+        <p>A rare pearl discovered in a hidden place.</p>
+        <p>Your kindness is treasure, your laughter, pure gold,</p>
+        <p>In the map of my heart, your story is told.</p>
+    </div>
+    <div class="slide">
+        <h2>Cheers to You!</h2>
+        <p>May your days be adorned with joy, like treasures from afar,</p>
+        <p>With each step you take, may you shine like the brightest star.</p>
+        <p>Embrace every moment, let your spirit be free,</p>
+        <p>With love as your anchor, sail life's vast sea.</p>
+        <p>Here's to your laughter, a melody so sweet,</p>
+        <p>Yours always and in all ways,</p>
+        <p>Aliii 🫠</p>
+    </div>
+</div>
+
+<div class="nav">
+    <button onclick="prevSlide()">❮ Prev</button>
+    <button onclick="nextSlide()">Next ❯</button>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+</script>
+
+</body>
+</html>
